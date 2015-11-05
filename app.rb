@@ -67,9 +67,8 @@ class HangpersonApp < Sinatra::Base
   end
   
   get '/win' do
-    state = @game.check_win_or_lose()
     ### YOUR CODE HERE ###
-    if state == :win
+    if @game.word != ""
       erb :win # You may change/remove this line
     else
       erb :show
@@ -77,9 +76,8 @@ class HangpersonApp < Sinatra::Base
   end
   
   get '/lose' do
-    state = @game.check_win_or_lose()
     ### YOUR CODE HERE ###
-    if state == :lose
+    if @game.word != ""
       erb :lose # You may change/remove this line
     else
       erb :show
