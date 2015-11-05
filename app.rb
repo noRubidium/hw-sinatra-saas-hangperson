@@ -68,12 +68,20 @@ class HangpersonApp < Sinatra::Base
   
   get '/win' do
     ### YOUR CODE HERE ###
-    erb :win # You may change/remove this line
+    if state == :win
+      erb :win # You may change/remove this line
+    else
+      erb :show
+    end
   end
   
   get '/lose' do
     ### YOUR CODE HERE ###
-    erb :lose # You may change/remove this line
+    if state == :lose
+      erb :lose # You may change/remove this line
+    else
+      erb :show
+    end
   end
   
 end
