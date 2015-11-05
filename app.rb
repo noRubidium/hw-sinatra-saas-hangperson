@@ -57,6 +57,9 @@ class HangpersonApp < Sinatra::Base
   get '/show' do
     ### YOUR CODE HERE ###
     state = @game.check_win_or_lose()
+    if @game.word == ''
+      redirect '/new'
+    end
     if state == :win
       redirect '/win'
     elsif state == :lose
